@@ -4,7 +4,7 @@
 <body>
 	<h1>여기는 로그인 화면입니다</h1>
 	<div class="container">
-		<form action="/temp/join" method="post">
+		<form action="/auth/loginProc" method="post">
 			<div class="form-group">
 				<label for="username">username :</label> <input type="text" name="username" id="username" class="form-control" value="항">
 			</div>
@@ -12,10 +12,10 @@
 				<label for="password">password :</label> <input type="password" name="password" id=password class="form-control" value="1234">
 			</div>
 
-			<button type="button" id="btn--login" class="btn btn-primary">로그인</button>
+			<button type="submit" id="btn--login" class="btn btn-primary">로그인</button>
 		</form>
 	</div>
 	
-<script src="/js/user.js"></script>
+<!--<script src="/js/user.js"></script>  -->
 
 <%@ include file="../layout/footer.jsp" %>
