@@ -25,5 +25,14 @@ public class UserService {
 		}
 		return -1;		
 	}
+	
+	public User readUser(User user) {
+		
+		// 필요한 기능을 JPA가 제공하지 않음  -> 직접만들기
+//		User userEntity = userRepository.findByUsernameAndPassword(user.getUsername(), user.getPassword());
+		User userEntity = userRepository.login(user.getUsername(), user.getPassword() );
+		
+		return userEntity;		
+	}
 
 }
