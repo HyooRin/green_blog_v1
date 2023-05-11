@@ -16,11 +16,11 @@
 		<form action="/temp/join" method="post">
 			<div class="form-group">
 				<label for="username">username :</label>
-				<input type="text" name="username" id="username" class="form-control" value="항1">
+				<input type="text" name="username" id="username" class="form-control" value="${username}">
 			</div>
 			<div class="form-group">
 				<label for="password">password :</label>
-				<input type="password" name="password" id=password class="form-control" value="1234">
+				<input type="password" name="password" id=password class="form-control" value="${password}">
 			</div>
 			<div class="form-group">
 				<label for="email">email :</label>
@@ -29,36 +29,22 @@
 		</form>
 			<button id="join--submit" class="btn btn-primary">회원가입</button>
 	</div>
+	
 	<script type="text/javascript">
 		$(document).ready(function(){
 			
 			$("#join--submit").on("click", () => {
-				// MIME TYPE -> application/json
-				// js --> json 문자열로 변경하는 방법
-				// object -> JSON 문자열로 변경
-				let data = {
-						username: $("#username").val(),
-						password: $("#password").val(),
-						email: $("#email").val()
-				};
-				console.log(JSON.stringify(data));			
 				
-				$.ajax({
-					type: 'POST',
-					url: '/temp/join2',
-					contentType: 'application/json; charset=utf-8',
-					data: JSON.stringify(data),
-					dataType: 'json'
-				}).done(function(response){
-					console.log(response);
-					console.log(typeof response);
-					alert("회원가입 성공");
-					location.href = "/temp/index";
-				}).fail(function(error){
-					alert("서버오류")
-				});
+				
 			});
-		});
+		})
 	</script>
+	
+	
+	
+	
+	
+	
+	
 </body>
 </html>
